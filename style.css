@@ -72,6 +72,8 @@ p {
 .restart-btn {
   /* border: solid 1px #000; */
   background-color: #dd2c00;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .restart-btn:hover {

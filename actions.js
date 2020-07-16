@@ -25,3 +25,12 @@ const moveBall = () => {
     ball.dy *= -1;
   }
 }
+
+// Reset ball:
+const resetBall = () => {
+  ctx.beginPath();
+  ctx.arc(canvas.width/2, canvas.height/2, ball.r, 0, Math.PI * 2, true);
+  ctx.fillStyle = '#ffffff';
+  ctx.fill();
+  ctx.closePath();
+}

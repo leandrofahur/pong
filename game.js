@@ -16,9 +16,14 @@ window.onload = () => {
 }
 
 const game = () => {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawBall();
-  moveBall();
+  if(gamePlayStatus) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBall();
+    moveBall();
+  } else {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBall();
+  }
 }
 
 

@@ -94,7 +94,7 @@ canvas {
   background-color: blueviolet;
   border-radius: 5px;
   transform: scale(0);
-  transition: transform 1s ease-in-out;
+  transition: transform 500ms ease-in-out;
   padding: 0 20px;
 }
 

@@ -38,8 +38,9 @@ p {
 .btn {
   cursor: pointer;
   border: black 1px;
-  border: 0;
+  /* border: 0; */
   border-radius: 5px;
+  border: solid 1px #fff;
   padding: 10px 15px;
   margin: 5px;
   color: #fff;
@@ -60,6 +61,8 @@ p {
 
 .play-btn {
   background-color: #00c853;
+  border: solid 1px #000;
+  padding: 10px 30px;
 }
 
 .play-btn:hover {
@@ -67,6 +70,7 @@ p {
 }
 
 .restart-btn {
+  border: solid 1px #000;
   background-color: #dd2c00;
 }
 
@@ -112,4 +116,5 @@ canvas {
 #how-to-play .close-rules-btn {
   /* margin: auto; */
   margin: 10px auto;
+  padding: 10px 40px;
 }

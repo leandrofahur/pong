@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Pong</title>
 </head>
 <body>
   <h1>PONG</h1>
   
-  <button class="btn play-btn">Play</button>
-  <button class="btn restart-btn">Restart</button>
-  <button class="btn show-rules-btn">How To Play</button>
+  <div class="buttons">
+    <button class="btn play-btn">Play</button>
+    <button class="btn restart-btn">Restart</button>
+    <button class="btn show-rules-btn">How To Play</button>
+  </div>
+  
+  <canvas id="canvas" height="500" width="600"></canvas>
 
   <div id="how-to-play">
     <h3>HOW TO PLAY</h3>
@@ -19,7 +24,6 @@
     <button class="btn close-rules-btn">Close</button>
   </div>
 
-  <canvas id="canvas" height="500" width="600"></canvas>
   <script src="app.js"></script>
 </body>
 </html>

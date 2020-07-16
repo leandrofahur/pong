@@ -8,6 +8,8 @@
 
 Implement the classic arcade game named pong.
 
+[Pong demo](https://fahur-pong.herokuapp.com/)
+
 <!-- REFERENCE LINKS -->
 <!-- LinkedIn -->
 [linkedin-brand]: http://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/leandro-miranda-fahur-machado/

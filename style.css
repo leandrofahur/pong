@@ -61,7 +61,7 @@ p {
 
 .play-btn {
   background-color: #00c853;
-  border: solid 1px #000;
+  /* border: solid 1px #000; */
   padding: 10px 30px;
 }
 
@@ -70,7 +70,7 @@ p {
 }
 
 .restart-btn {
-  border: solid 1px #000;
+  /* border: solid 1px #000; */
   background-color: #dd2c00;
 }
 
@@ -81,7 +81,8 @@ p {
 canvas {
   display: block;
   background-color: #333;
-  border-radius: 5px;
+  border: 1px white solid;
+  border-radius: 5px; 
 }
 
 #how-to-play {

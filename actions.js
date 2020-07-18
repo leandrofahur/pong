@@ -4,9 +4,13 @@ const moveBall = () => {
   ball.y += ball.dy;
 
   if(ball.x - ball.r < 0) {  
+    ball.x = canvas.width/2;
+    ball.y = canvas.height/2;
     ball.dx *= -1;
   }
   if(ball.x + ball.r > canvas.width) {
+    ball.x = canvas.width/2;
+    ball.y = canvas.height/2;
     ball.dx *= -1;
   }
   if(ball.y - ball.r < 0) {

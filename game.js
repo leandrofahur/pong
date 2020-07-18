@@ -7,7 +7,7 @@ const ball = {
   x: canvas.width/2,
   y: canvas.height/2,
   r: 10,
-  dx: 7,
+  dx: 5,
   dy: 3
 }
 

@@ -28,15 +28,13 @@ const moveBall = () => {
     // ball.x - ball.r < paddle.x + paddle.w &&
     // ball.y - ball.r > paddle.y &&
     // ball.y + ball.r < paddle.y + paddle.h
-    ball.x - ball.r < paddle.x + paddle.w &&
-    ball.y > paddle.y &&
-    ball.y < paddle.y + paddle.h
-
+    ball.x - ball.r <= paddle.x + paddle.w &&
+    ball.y > paddle.y - 15 &&
+    ball.y < paddle.y + paddle.h + 15
   ) {
     ball.dx *= -1;
     ball.dy = k*Math.abs(paddle.y+paddle.h/2 - ball.y);
-    console.log(`enemy: (${enemy.x},${enemy.y})`);
-    console.log(`ball: (${ball.x},${ball.y})`);
+    // console.log(`paddl: (${paddle.x},${paddle.y})`);
   }
 
   // Enemy collision:
@@ -45,8 +43,8 @@ const moveBall = () => {
     // ball.y - ball.r > enemy.y &&
     // ball.y + ball.r < enemy.y + enemy.h
     ball.x + ball.r > enemy.x &&
-    ball.y > enemy.y &&
-    ball.y < enemy.y + enemy.h
+    ball.y > enemy.y - 15 &&
+    ball.y < enemy.y + enemy.h + 15
   ) {
     ball.dx *= -1;
     ball.dy = k*Math.abs(enemy.y+enemy.h/2 - ball.y);
@@ -94,6 +92,7 @@ const game = () => {
     moveBall();
     moveEnemy();
     drawScore();
+    // console.log(`ball: (${ball.x},${ball.y})`);
   } else {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();

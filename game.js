@@ -20,7 +20,7 @@ const paddle = {
   y: canvas.height/2 - 50,
   w: 10,
   h: 100,
-  dy: 7
+  dy: 5
 }
 
 const enemy = {

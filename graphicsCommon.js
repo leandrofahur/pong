@@ -4,8 +4,6 @@ let gamePlayStatus = false;
 // How to play:
 const howToPlay = document.querySelector('#how-to-play')
 
-
-
 // Button to show the rules:
 const showRulesBtn = document.querySelector('.show-rules-btn');
 // Button to hide the rules:
@@ -33,4 +31,32 @@ playBtn.addEventListener('click', () => {
 restartBtn.addEventListener('click', () => {
   console.log('Restart');
   gamePlayStatus = false;
-})
+});
+
+// Draw ball:
+const drawBall = () => {
+  ctx.beginPath();
+  ctx.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2, true);
+  ctx.fillStyle = '#ffffff';
+  ctx.fill();
+  ctx.closePath();
+}
+
+// Draw paddle:
+const drawPaddle = () => {
+  ctx.beginPath();
+  ctx.rect(paddle.x, paddle.y, paddle.w, paddle.h);
+  ctx.fillStyle = '#ffffff';
+  ctx.fill();
+  ctx.closePath();
+}
+
+// Draw enemy:
+const drawEnemy = () => {
+  ctx.beginPath();
+  ctx.rect(enemy.x, enemy.y, enemy.w, enemy.h);
+  ctx.fillStyle = '#ffffff';
+  ctx.fill();
+  ctx.closePath();
+}
+

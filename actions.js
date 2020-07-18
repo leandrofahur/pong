@@ -1,12 +1,3 @@
-// Draw ball:
-const drawBall = () => {
-  ctx.beginPath();
-  ctx.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2, true);
-  ctx.fillStyle = '#ffffff';
-  ctx.fill();
-  ctx.closePath();
-}
-
 // Move ball:
 const moveBall = () => {
   ball.x += ball.dx;
@@ -24,6 +15,39 @@ const moveBall = () => {
   if(ball.y + ball.r > canvas.height) {
     ball.dy *= -1;
   }
+
+  // Collision detection:
+  // Paddle collision:
+  if (
+    ball.x - ball.r < paddle.x + paddle.w &&
+    ball.y + ball.r > paddle.y &&
+    ball.y - ball.r < paddle.y + paddle.h
+  ) {
+    ball.dx *= -1;
+  }
+
+  // Enemy collision:
+  if (
+    ball.x + ball.r > enemy.x &&
+    ball.y + ball.r > enemy.y &&
+    ball.y - ball.r < enemy.y + enemy.h
+  ) {
+    ball.dx *= -1;
+  }
+
+}
+
+// Move enemy:
+const moveEnemy = () => {
+  enemy.y += enemy.dy;
+
+  if(enemy.y < 0) {
+    enemy.dy *= -1;
+  }
+
+  if(enemy.y + enemy.h > canvas.height) {
+    enemy.dy *= -1;
+  }
 }
 
 // Reset ball:
@@ -33,4 +57,21 @@ const resetBall = () => {
   ctx.fillStyle = '#ffffff';
   ctx.fill();
   ctx.closePath();
+}
+
+// Game world:
+const game = () => {
+  if(gamePlayStatus) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBall();
+    drawPaddle();
+    drawEnemy();
+    moveBall();
+    moveEnemy();
+  } else {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBall();
+    drawPaddle();
+    drawEnemy();
+  }
 }

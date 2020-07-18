@@ -11,19 +11,24 @@ const ball = {
   dy: 3
 }
 
-window.onload = () => {
-  setInterval(game, 1000/frameRate);
+const paddle = {
+  x: 20,
+  y: canvas.height/2 - 50,
+  w: 10,
+  h: 100,
+  dy: 5
 }
 
-const game = () => {
-  if(gamePlayStatus) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawBall();
-    moveBall();
-  } else {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawBall();
-  }
+const enemy = {
+  x: canvas.width - 20 - 10,
+  y: canvas.height/2 - 50,
+  w: 10,
+  h: 100,
+  dy: 5
+}
+
+window.onload = () => {
+  setInterval(game, 1000/frameRate);
 }
 
 

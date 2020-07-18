@@ -34,7 +34,7 @@ const moveBall = () => {
 
   ) {
     ball.dx *= -1;
-    // ball.dy = k*Math.abs(paddle.y+paddle.h/2);
+    ball.dy = k*Math.abs(paddle.y+paddle.h/2 - ball.y);
     console.log(`enemy: (${enemy.x},${enemy.y})`);
     console.log(`ball: (${ball.x},${ball.y})`);
   }
@@ -49,7 +49,7 @@ const moveBall = () => {
     ball.y < enemy.y + enemy.h
   ) {
     ball.dx *= -1;
-    // ball.dy = k*Math.abs(enemy.y+enemy.h/2);
+    ball.dy = k*Math.abs(enemy.y+enemy.h/2 - ball.y);
     // console.log(`enemy: (${enemy.x},${enemy.y})`);
     // console.log(`ball: (${ball.x},${ball.y})`);
   }
@@ -58,22 +58,21 @@ const moveBall = () => {
 
 // Move enemy:
 const moveEnemy = () => {
-  enemy.y += enemy.dy;
-  // if(enemy.y < 0) {
-  //   enemy.dy *= -1;
-  // }
-  // if(enemy.y + enemy.h > canvas.height) {
-  //   enemy.dy *= -1;
-  // }
-  
-  // if(enemy.y + enemy.h/2 < ball.y - 50) {
-  //   enemy.dy += 5;
-  //   enemy.y += enemy.dy;
-  // }
-  // if(enemy.y + enemy.h/2 > ball.y + 50) {
-  //   enemy.dy -= 5;
-  //   enemy.y += enemy.dy;
-  // }
+  // enemy.y += enemy.dy;
+  let enemyYCenter = enemy.y + enemy.h/2;
+  if(enemyYCenter > ball.y + 35) {
+    enemy.y -= 7;
+  }
+  if(enemyYCenter < ball.y - 35) {
+    enemy.y += 7;
+  }
+
+  if(enemy.y < 0) {
+    enemy.dy *= -1;
+  }
+  if(enemy.y + enemy.h > canvas.height) {
+    enemy.dy *= -1;
+  }
 }
 
 // Reset ball:

@@ -7,11 +7,13 @@ const moveBall = () => {
     ball.x = canvas.width/2;
     ball.y = canvas.height/2;
     ball.dx *= -1;
+    player2Score += 1;
   }
   if(ball.x + ball.r > canvas.width) {
     ball.x = canvas.width/2;
     ball.y = canvas.height/2;
     ball.dx *= -1;
+    player1Score += 1;
   }
   if(ball.y - ball.r < 0) {
     ball.dy *= -1;
@@ -24,21 +26,25 @@ const moveBall = () => {
   // Paddle collision:
   if (
     ball.x - ball.r < paddle.x + paddle.w &&
-    ball.y + ball.r > paddle.y &&
-    ball.y - ball.r < paddle.y + paddle.h
+    ball.y - ball.r > paddle.y &&
+    ball.y + ball.r < paddle.y + paddle.h
   ) {
     ball.dx *= -1;
+    // ball.dy = k*Math.abs(paddle.y+paddle.h/2);
+    console.log(`enemy: (${enemy.x},${enemy.y})`);
+    console.log(`ball: (${ball.x},${ball.y})`);
   }
 
   // Enemy collision:
   if (
     ball.x + ball.r > enemy.x &&
-    ball.y + ball.r > enemy.y &&
-    ball.y - ball.r < enemy.y + enemy.h
+    ball.y - ball.r > enemy.y &&
+    ball.y + ball.r < enemy.y + enemy.h
   ) {
     ball.dx *= -1;
-    console.log(`enemy: (${enemy.x},${enemy.y})`);
-    console.log(`ball: (${ball.x},${ball.y})`);
+    // ball.dy = k*Math.abs(enemy.y+enemy.h/2);
+    // console.log(`enemy: (${enemy.x},${enemy.y})`);
+    // console.log(`ball: (${ball.x},${ball.y})`);
   }
 
 }

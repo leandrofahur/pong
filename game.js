@@ -3,12 +3,16 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const frameRate = 30;
 
+let player1Score = 0;
+let player2Score = 0;
+const k = 0.35;
+
 const ball = {
   x: canvas.width/2,
   y: canvas.height/2,
   r: 10,
-  dx: 5,
-  dy: 3
+  dx: 7,
+  dy: 5
 }
 
 const paddle = {

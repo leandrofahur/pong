@@ -24,12 +24,12 @@ closeRulesBtn.addEventListener('click', () => {
 });
 // Event listner to start the game:
 playBtn.addEventListener('click', () => {
-  console.log('Play');
+  // console.log('Play');
   gamePlayStatus = true;
 });
 // Event listner to restrt the game:
 restartBtn.addEventListener('click', () => {
-  console.log('Restart');
+  // console.log('Restart');
   gamePlayStatus = false;
 });
 

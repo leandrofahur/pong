@@ -93,10 +93,12 @@ const game = () => {
     drawEnemy();
     moveBall();
     moveEnemy();
+    drawScore();
   } else {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
     drawPaddle();
     drawEnemy();
+    drawScore();
   }
 }

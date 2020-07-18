@@ -59,3 +59,12 @@ const drawEnemy = () => {
   ctx.fill();
   ctx.closePath();
 }
+
+// Draw score:
+
+const drawScore = () => {
+  ctx.fillStyle = '#ffffff';
+  ctx.font = '21px Arial';
+  ctx.fillText(`Score: ${player1Score}`, canvas.width/4-30, 50);
+  ctx.fillText(`Score: ${player2Score}`, 3*canvas.width/4-50, 50);
+}

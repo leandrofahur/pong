@@ -33,6 +33,8 @@ const moveBall = () => {
     ball.y - ball.r < enemy.y + enemy.h
   ) {
     ball.dx *= -1;
+    console.log(`enemy: (${enemy.x},${enemy.y})`);
+    console.log(`ball: (${ball.x},${ball.y})`);
   }
 
 }

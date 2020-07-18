@@ -7,7 +7,7 @@ const ball = {
   x: canvas.width/2,
   y: canvas.height/2,
   r: 10,
-  dx: 5,
+  dx: 7,
   dy: 3
 }
 
@@ -29,6 +29,7 @@ const enemy = {
 
 window.onload = () => {
   setInterval(game, 1000/frameRate);
+  addEventListener('mousemove', onUpdateMousePos);
 }
 
 

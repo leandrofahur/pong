@@ -25,9 +25,13 @@ const moveBall = () => {
   // Collision detection:
   // Paddle collision:
   if (
+    // ball.x - ball.r < paddle.x + paddle.w &&
+    // ball.y - ball.r > paddle.y &&
+    // ball.y + ball.r < paddle.y + paddle.h
     ball.x - ball.r < paddle.x + paddle.w &&
-    ball.y - ball.r > paddle.y &&
-    ball.y + ball.r < paddle.y + paddle.h
+    ball.y > paddle.y &&
+    ball.y < paddle.y + paddle.h
+
   ) {
     ball.dx *= -1;
     // ball.dy = k*Math.abs(paddle.y+paddle.h/2);
@@ -37,9 +41,12 @@ const moveBall = () => {
 
   // Enemy collision:
   if (
+    // ball.x + ball.r > enemy.x &&
+    // ball.y - ball.r > enemy.y &&
+    // ball.y + ball.r < enemy.y + enemy.h
     ball.x + ball.r > enemy.x &&
-    ball.y - ball.r > enemy.y &&
-    ball.y + ball.r < enemy.y + enemy.h
+    ball.y > enemy.y &&
+    ball.y < enemy.y + enemy.h
   ) {
     ball.dx *= -1;
     // ball.dy = k*Math.abs(enemy.y+enemy.h/2);
@@ -52,14 +59,21 @@ const moveBall = () => {
 // Move enemy:
 const moveEnemy = () => {
   enemy.y += enemy.dy;
-
-  if(enemy.y < 0) {
-    enemy.dy *= -1;
-  }
-
-  if(enemy.y + enemy.h > canvas.height) {
-    enemy.dy *= -1;
-  }
+  // if(enemy.y < 0) {
+  //   enemy.dy *= -1;
+  // }
+  // if(enemy.y + enemy.h > canvas.height) {
+  //   enemy.dy *= -1;
+  // }
+  
+  // if(enemy.y + enemy.h/2 < ball.y - 50) {
+  //   enemy.dy += 5;
+  //   enemy.y += enemy.dy;
+  // }
+  // if(enemy.y + enemy.h/2 > ball.y + 50) {
+  //   enemy.dy -= 5;
+  //   enemy.y += enemy.dy;
+  // }
 }
 
 // Reset ball:

@@ -59,4 +59,3 @@ const drawEnemy = () => {
   ctx.fill();
   ctx.closePath();
 }
-

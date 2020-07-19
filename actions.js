@@ -64,7 +64,6 @@ const moveEnemy = () => {
   if(enemyYCenter < ball.y - 35) {
     enemy.y += 7;
   }
-
   if(enemy.y < 0) {
     enemy.dy *= -1;
   }
